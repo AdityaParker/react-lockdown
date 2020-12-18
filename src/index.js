@@ -31,6 +31,8 @@ import './index.css'
 
 
 const BookList=()=>{
+
+  
 return <>
  <Nav/>
 <section className="bookList">
@@ -48,10 +50,12 @@ return <>
 }
 
 const Book=()=>{
+  const name="created by Aditya Gautam"
 return <article className="book">
    <Image/>
    <Title/>
    <Author/>
+   <p>{name.toUpperCase()}</p>
 </article>
 }
 
