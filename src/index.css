@@ -32,3 +32,6 @@ body {
 .book h2 {
   margin-top: 0.7rem;
 }
+.book p {
+  margin-top: 0.5rem;
+}

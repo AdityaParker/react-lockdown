@@ -1,13 +1,16 @@
-import React from 'react'
-import ReactDom from 'react-dom'
-import './index.css'
+import React from "react";
+import ReactDom from "react-dom";
+import "./index.css";
+import { books } from "./Books";
+
+import AnyNameYouLike from "./Book";
 
 // function Greetings(){
 //   return <div>
 //     <ComponentOne/>
 //     <ComponentTwo/>
 //   </div>
-  
+
 // }
 
 // const Greetings=()=>{
@@ -15,7 +18,6 @@ import './index.css'
 // }
 
 // nesting of components
-
 
 // const ComponentOne=()=>{
 //   return <h1>Hello Aditya!</h1>
@@ -25,51 +27,40 @@ import './index.css'
 //   return <p>This is another component!</p>
 // }
 
+// projectOne
 
+const BookList = () => {
+  return (
+    <>
+      <Nav />
+      <section className="bookList">
+        {books.map((book) => {
+          return <AnyNameYouLike key={book.number} {...book}></AnyNameYouLike>;
+        })}
+      </section>
+    </>
+  );
+};
 
-// projectOne 
+const Nav = () => {
+  return (
+    <nav
+      style={{
+        padding: "3rem",
+        fontSize: "3rem",
+        color: "blue",
+        background: "black",
+        textAlign: "center",
+      }}
+    >
+      React-Project #1
+    </nav>
+  );
+};
+// const Image=()=><img src="https://images-eu.ssl-images-amazon.com/images/I/71aFt4%2BOTOL._AC_UL200_SR200,200_.jpg" alt=""/>
 
+// const Title=()=><h2>The Alchemist Paperback – 17 October 2005</h2>
 
-const BookList=()=>{
+// const Author=()=><h5 style={{color:'#f00',letterSpacing:'.25rem'}}>by Paulo Coelho  (Author)</h5>
 
-  
-return <>
- <Nav/>
-<section className="bookList">
- 
- <Book></Book>
- <Book></Book>
- <Book></Book>
- <Book></Book>
- <Book></Book>
- <Book></Book>
- <Book></Book>
-
-</section>
-</>
-}
-
-const Book=()=>{
-  const name="created by Aditya Gautam"
-return <article className="book">
-   <Image/>
-   <Title/>
-   <Author/>
-   <p>{name.toUpperCase()}</p>
-</article>
-}
-
-const Nav=()=>{
-
-  return <nav style={{padding:'3rem',fontSize:'3rem',color:'blue',background:'black',textAlign:'center'}}>
-    React-Project #1
-  </nav>
-}
-const Image=()=><img src="https://images-eu.ssl-images-amazon.com/images/I/71aFt4%2BOTOL._AC_UL200_SR200,200_.jpg" alt=""/>
-
-
-const Title=()=><h2>The Alchemist Paperback – 17 October 2005</h2>
-
-const Author=()=><h5 style={{color:'#f00',letterSpacing:'.25rem'}}>by Paulo Coelho  (Author)</h5>
-
-ReactDom.render(<BookList/>,document.getElementById('root'));
+ReactDom.render(<BookList />, document.getElementById("root"));
